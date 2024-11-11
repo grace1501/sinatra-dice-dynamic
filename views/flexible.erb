@@ -1,0 +1,9 @@
+<h1><%= @dice_amount %>d<%= @sides %></h1>
+
+<ul>
+  <% @rolls.each do |roll| %>
+  <li>
+    <%= roll %>
+  </li>
+  <% end %>
+</ul>

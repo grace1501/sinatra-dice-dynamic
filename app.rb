@@ -52,3 +52,20 @@ get("/dice/5/4") do
 
   erb(:five_four)
 end
+
+
+get("/dice/:number_of_dice/:number_of_sides") do
+  @dice_amount = params.fetch("number_of_dice").to_i
+  @sides = params.fetch("number_of_sides").to_i
+  pp "Running"
+  @rolls = []
+
+  @dice_amount.times do
+    die = rand(1..@sides)
+    @rolls.push(die)
+  end
+
+  pp @rolls
+  
+  erb(:flexible)
+end
